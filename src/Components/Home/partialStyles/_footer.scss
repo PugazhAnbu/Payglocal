@@ -1,0 +1,25 @@
+.footer-container {
+    display: flex;
+    margin: 15px 50px;
+    justify-content: space-around;
+
+    .page-selection {
+        font-size: 20px;
+        //    padding: 8px;
+        width: 50px;
+    }
+
+    .footer-button {
+        button {
+            display: inline !important;
+            font-size: 20px;
+            margin: 0 20px;
+            padding: 0 12px;
+            background-color: $background;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+        }
+
+    }
+}
