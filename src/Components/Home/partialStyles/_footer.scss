@@ -23,3 +23,29 @@
 
     }
 }
+
+@media screen and (max-width: 480px) {
+    .footer-container {
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        // width: 100%;
+       
+        margin: 0 auto;
+        overflow: hidden;
+
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .footer-container {
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 0 auto;
+        overflow: hidden;
+
+    }
+}

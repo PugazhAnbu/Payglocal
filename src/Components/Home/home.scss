@@ -70,4 +70,23 @@ $background: #0667b8;
 
 
 
-
+@media screen and (min-width: 700px) and (max-width: 980px) {
+  
+    .Book-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+    
+            margin: 0 auto;
+            overflow: hidden;
+        }
+    
+}
+@media screen and (max-width: 650px) {
+    .Book-container{
+        display: grid;
+            grid-template-columns: 1fr;
+         
+            margin: 0 auto;
+            overflow: hidden;
+    }
+}

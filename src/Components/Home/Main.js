@@ -83,7 +83,7 @@ function Main() {
     }
     return (
 
-        <div>
+        <div className='container'>
             <Header {...props} />
             <div className='Book-container'>
                 {trimData.map(renderList)}

@@ -47,3 +47,32 @@
     }
 
 }
+
+@media screen and (max-width: 480px) {
+    .header {
+        
+            display: flex;
+            justify-content: space-between;
+        flex-direction: column;
+            // width: 100%;
+            box-shadow: 6px 6px 5px #aaaaaa;
+
+            margin: 0 auto;
+            overflow: hidden;
+        
+    }
+}
+@media screen and (max-width: 780px) {
+    .header {
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        // width: 100%;
+        box-shadow: 6px 6px 5px #aaaaaa;
+
+        margin: 0 auto;
+        overflow: hidden;
+
+    }
+}
