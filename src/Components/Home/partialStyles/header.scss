@@ -48,12 +48,12 @@
 
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 700px) {
     .header {
         
             display: flex;
             justify-content: space-between;
-        flex-direction: column;
+            flex-direction: column;
             // width: 100%;
             box-shadow: 6px 6px 5px #aaaaaa;
 
@@ -62,17 +62,21 @@
         
     }
 }
-@media screen and (max-width: 780px) {
+
+@media only screen and (min-width: 780px) and (max-width: 980px) {
     .header {
 
         display: flex;
         justify-content: space-between;
-        flex-direction: column;
+        flex-direction: row;
         // width: 100%;
         box-shadow: 6px 6px 5px #aaaaaa;
 
         margin: 0 auto;
         overflow: hidden;
-
+        .search-container{
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
     }
 }

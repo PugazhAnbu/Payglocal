@@ -123,7 +123,7 @@
             list-style: none;
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: center;
 
             li {
@@ -132,6 +132,31 @@
                 padding: 15px;
                 cursor: pointer;
             }
+           label{
+           
+           }
+           
+            // input[type="radio"]{display: none;}
+            label span{
+                width: 200px;
+                background-color: #dedede;
+                padding: 15px;
+                cursor: pointer;
+            }
+            label input[type="radio"]:checked ~ span{
+                background-color: goldenrod;
+            }
+                
+            // }
+            // label:hover {
+            //     background:green;
+            //   }
+            // .GAINSBORO{
+            //     background-color: #dedede;
+            // }
+            // .green{
+            //     background-color: green;
+            // }
         }
 
         .genre {
