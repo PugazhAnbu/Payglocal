@@ -25,10 +25,10 @@ function Filter({ props, togglePopup }) {
     console.log("filtered", filtered)
     const applyCountRating = (e) => {
         console.log("event isShow", e.target.outerText)
-
+        setRating(e.target.outerText);
         if (ratingcount === 0) {
             setApplyCount(applyCount + 1);
-            setRating(e.target.outerText);
+
             setRatingcount(ratingcount + 1);
 
         }
@@ -70,7 +70,7 @@ function Filter({ props, togglePopup }) {
 
             } else if (parseInt(rating) === parseInt(4)) {
                 ratingFilterarray = [...booksList].filter(item => {
-                    return (parseInt(item?.volumeInfo?.averageRating) < parseInt(rating))
+                    return (parseInt(item?.volumeInfo?.averageRating) > parseInt(rating))
                 })
             } else {
                 console.log("rating", rating);
@@ -127,7 +127,7 @@ function Filter({ props, togglePopup }) {
 
                         } else if (parseInt(rating) === parseInt(4)) {
                             ratingFilterarray = filteredData.filter(item => {
-                                return (parseInt(item?.volumeInfo?.averageRating) < parseInt(rating))
+                                return (parseInt(item?.volumeInfo?.averageRating) > parseInt(rating))
                             })
                         } else {
                             console.log("rating", rating);
@@ -218,13 +218,13 @@ function Filter({ props, togglePopup }) {
                     {
                         isShowRating && (<ul className='ultag-genre'>
                             <label>
-                                <input type="radio" id="rating1" key="3" name="choice" value="Less 3" /><span onClick={applyCountRating} htmlFor="rating1" value="3"> 3</span>
+                                <input type="radio" id="rating1" key="3" name="choice" value="Less 3" />Less<span onClick={applyCountRating} htmlFor="rating1" value="3"> 3</span>
                             </label>
                             <label>
-                                <input type="radio" id="rating2" key="4" name="choice" value="above 4" /><span onClick={applyCountRating} htmlFor="rating2" value="4">  4</span>
+                                <input type="radio" id="rating2" key="4" name="choice" value="above 4" />above<span onClick={applyCountRating} htmlFor="rating2" value="4">  4</span>
                             </label>
                             <label>
-                                <input type="radio" id="rating3" key="5" name="choice" value="5" /><span onClick={applyCountRating} htmlFor="rating3" value="5">5</span>
+                                <input type="radio" id="rating3" key="5" name="choice" value="5" />LessThan & equal<span onClick={applyCountRating} htmlFor="rating3" value="5">5</span>
                             </label>
 
                         </ul>)
