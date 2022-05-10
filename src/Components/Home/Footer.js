@@ -3,17 +3,17 @@ import React, { useEffect } from 'react'
 function Footer(props) {
 
     // console.log(props)
-    const { pageSize, setPageSize, booksList, trimData, setTrimData, page, setPage, totalpages, setTotalPages, searchTerm } = props;
+    const { pageSize, setPageSize, booksList, trimData, setTrimData, page, setPage, totalpages, setTotalPages, searchTerm, applyCount } = props;
 
     const Pagination = () => {
-        if(searchTerm === ""){
+        if (searchTerm === "" || applyCount === 0) {
             setPage(1);
             console.log("pageSize", pageSize)
             let trimStart = (0) * pageSize;
-            console.log("trimStart",trimStart);
+            console.log("trimStart", trimStart);
 
             let trimEnd = trimStart + pageSize;
-            console.log("trimEnd",trimEnd);
+            console.log("trimEnd", trimEnd);
             let slicedData = ([...booksList].slice(trimStart, trimEnd));
             // console.log("slicedData", slicedData)
             setTrimData(slicedData);
@@ -24,17 +24,21 @@ function Footer(props) {
             console.log("totalpages", totalpages);
         }
         // when searchTerm contain string at the same time change the page size that time we need to calculate our total pages bcoz we need to hide next buttton
-        else{
-            let allpages = Math.ceil(booksList.length / pageSize);
+        else {
+            let allpages = Math.ceil(trimData.length / pageSize);
             setTotalPages(allpages);
             console.log("totalpages", totalpages);
         }
-        
+
     }
     useEffect(() => {
         Pagination()
 
     }, [booksList, pageSize])
+
+    useEffect(() => {
+        slicePageData()
+    }, [])
 
     function slicePageData(page) {
 

@@ -48,35 +48,35 @@
 
 }
 
-@media screen and (max-width: 700px) {
-    .header {
+// @media screen and (max-width: 700px) {
+    // .header {
         
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            // width: 100%;
-            box-shadow: 6px 6px 5px #aaaaaa;
+    //         display: flex;
+    //         justify-content: space-between;
+    //         flex-direction: column;
+    //         // width: 100%;
+    //         box-shadow: 6px 6px 5px #aaaaaa;
 
-            margin: 0 auto;
-            overflow: hidden;
+    //         margin: 0 auto;
+    //         overflow: hidden;
         
-    }
-}
+    // }
+// }
 
-@media only screen and (min-width: 780px) and (max-width: 980px) {
-    .header {
+// @media only screen and (min-width: 780px) and (max-width: 980px) {
+//     .header {
 
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        // width: 100%;
-        box-shadow: 6px 6px 5px #aaaaaa;
+//         display: flex;
+//         justify-content: space-between;
+//         flex-direction: row;
+//         // width: 100%;
+//         box-shadow: 6px 6px 5px #aaaaaa;
 
-        margin: 0 auto;
-        overflow: hidden;
-        .search-container{
-            flex-wrap: wrap;
-            overflow: hidden;
-        }
-    }
-}
+//         margin: 0 auto;
+//         overflow: hidden;
+//         .search-container{
+//             flex-wrap: wrap;
+//             overflow: hidden;
+//         }
+//     }
+// }

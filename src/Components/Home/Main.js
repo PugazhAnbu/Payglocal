@@ -35,7 +35,7 @@ function Main() {
     const renderList = (book, index) => {
         //book.valumeinfo contains title author page .etc so we directly extract
         //retailPrice
-        const { title, authors, saleInfo, averageRating, imageLinks, categories } = book.volumeInfo;
+        const { title, subtitle, authors, saleInfo, averageRating, imageLinks, categories } = book.volumeInfo;
 
 
         return (
@@ -49,6 +49,7 @@ function Main() {
 
                 <div className="card-body">
                     <li>BookName: <span> {title}</span> </li>
+                    <li>Subtitle: <span> {subtitle}</span> </li>
                     <li>Author:  <span> {authors}</span></li>
                     <li>Rating:  <span> {averageRating}</span></li>
                     <li>Genre:  <span> {categories}</span></li>

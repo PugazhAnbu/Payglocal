@@ -84,7 +84,7 @@ $background: #0667b8;
 }
 @media screen and (max-width: 580px) {
     .container{
-        width: 100;
+        width: 100%;
         display: grid;
         min-height: 100vh;
         margin-left: -10px;
@@ -94,9 +94,26 @@ $background: #0667b8;
         overflow: hidden;
         
     .Book-container{
-      
-       
+    grid-template-columns: 1fr;
+       margin-left: 20px;
+    //    padding: 15px;
+       width: 100% !important;
+       justify-content: center;
     }
+
+        .header {
+    
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            // width: 100%;
+            box-shadow: 6px 6px 5px #aaaaaa;
+    
+            width: 100% !important;
+            justify-content: center;
+            overflow: hidden;
+    
+        }
 
 .footer-container {
     display: flex;

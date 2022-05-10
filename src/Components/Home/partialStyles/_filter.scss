@@ -132,18 +132,22 @@
                 padding: 15px;
                 cursor: pointer;
             }
-           label{
+          
            
-           }
-           
-            // input[type="radio"]{display: none;}
-            label span{
+            input[type="radio"]{display: none;}
+            label{
+                margin: 10px;
+            }
+            span{
                 width: 200px;
                 background-color: #dedede;
                 padding: 15px;
+                margin: 15px 20px;
                 cursor: pointer;
             }
-            label input[type="radio"]:checked ~ span{
+            input[type="radio"]:checked ~ span{
+              
+
                 background-color: goldenrod;
             }
                 
