@@ -3,14 +3,14 @@ import React, { useState } from "react";
 
 function Filter({ props, togglePopup }) {
 
-    const { booksList, trimData, setTrimData, pageSize, page, openPopup, totalpages, setTotalPages, applyCount, setApplyCount } = props;
+    const { booksList, setTrimData, pageSize, page, openPopup, totalpages, setTotalPages, applyCount, setApplyCount } = props;
     const initialValues = { Fiction: "", Cooking: "", History: "", }
     const [filtered, setFiltered] = useState(initialValues);
     const [isShowRating, setIsShowRating] = useState(false);
     const [isShow, setIsShow] = useState(false);
     const [ratingcount, setRatingcount] = useState(0);
     const [rating, setRating] = useState(0);
-
+    const [filterText, setFilterText] = useState('');
     const handleChange = (e) => {
 
         const { innerHTML, outerText } = e.target;
@@ -24,8 +24,9 @@ function Filter({ props, togglePopup }) {
     }
     console.log("filtered", filtered)
     const applyCountRating = (e) => {
-        console.log("event isShow", e.target.outerText)
-        setRating(e.target.outerText);
+        console.log("event isShow", typeof (e.target.nextElementSibling.innerText), e, e.target.nextElementSibling.innerText)
+        setRating(e.target.nextElementSibling.innerText);
+        // setFilterText()
         if (ratingcount === 0) {
             setApplyCount(applyCount + 1);
 
@@ -75,7 +76,7 @@ function Filter({ props, togglePopup }) {
             } else {
                 console.log("rating", rating);
                 ratingFilterarray = [...booksList].filter(item => {
-                    return (parseInt(item?.volumeInfo?.averageRating) < parseInt(rating))
+                    return (parseInt(item?.volumeInfo?.averageRating) <= parseInt(rating))
                 })
             }
             ratingFilterarray.forEach(val => {
@@ -213,18 +214,18 @@ function Filter({ props, togglePopup }) {
         <div className='popup-container'>
             <div className='popup-content'>
 
-                <div className='rating'>
+                <div className='genre'>
                     <h3 className="filter-heading" onClick={ShowRatings}>Ranting Range Filter</h3>
                     {
                         isShowRating && (<ul className='ultag-genre'>
-                            <label>
-                                <input type="radio" id="rating1" key="3" name="choice" value="Less 3" />Less<span onClick={applyCountRating} htmlFor="rating1" value="3"> 3</span>
+                            <label style={{ backgroundColor: (rating.toString() === (3).toString()) ? "orange" : "" }} onClick={applyCountRating}>
+                                <input type="radio" id="rating1" key="3" name="choice" value="Less 3" />Less<span htmlFor="rating1" value="3">3</span>
                             </label>
-                            <label>
-                                <input type="radio" id="rating2" key="4" name="choice" value="above 4" />above<span onClick={applyCountRating} htmlFor="rating2" value="4">  4</span>
+                            <label style={{ backgroundColor: (rating.toString() === (4).toString()) ? "orange" : "" }} onClick={applyCountRating}>
+                                <input type="radio" id="rating2" key="4" name="choice" value="above 4" />above<span htmlFor="rating2" value="4">4</span>
                             </label>
-                            <label>
-                                <input type="radio" id="rating3" key="5" name="choice" value="5" />LessThan & equal<span onClick={applyCountRating} htmlFor="rating3" value="5">5</span>
+                            <label style={{ backgroundColor: (rating.toString() === (5).toString()) ? "orange" : "" }} onClick={applyCountRating}>
+                                <input type="radio" id="rating3" key="5" name="choice" value="5" />LessThan & equal<span htmlFor="rating3" value="5">5</span>
                             </label>
 
                         </ul>)
