@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 function Filter({ props, togglePopup }) {
@@ -38,9 +38,26 @@ function Filter({ props, togglePopup }) {
     //     const largerThanSixty = 
     //     }))
     // }
+    const updateContent = () => {
+        if (applyCount === 0 && ratingcount === 0 && rating === 0) {
+
+            let startValue = (0) * pageSize;
+            console.log("startValue", startValue);
+            let EndValue = startValue + pageSize;
+            console.log("EndValue", EndValue);
+            let slicedData = ([...booksList]?.slice(startValue, EndValue));
+
+            setTrimData(slicedData);
+            // console.log("this is trim data")
+            // console.log("trimData", trimData);
+
+        }
+    }
 
 
-
+    useEffect(() => {
+        updateContent();
+    }, [applyCount, ratingcount, rating]);
 
     if (!openPopup) return null;
 
@@ -194,10 +211,15 @@ function Filter({ props, togglePopup }) {
 
 
 
+
+
     const resetFilter = () => {
         setFiltered(initialValues);
         setApplyCount(0);
         setRatingcount(0);
+        setRating(0);
+
+
         togglePopup();
     }
 
